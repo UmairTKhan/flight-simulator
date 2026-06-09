@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Flight Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="canvas-container"></div>
+    
+    <!-- HUD (Heads-Up Display) -->
+    <div id="hud">
+        <div class="hud-top">
+            <div class="hud-item">
+                <span class="label">Altitude</span>
+                <span class="value" id="altitude">0 ft</span>
+            </div>
+            <div class="hud-item">
+                <span class="label">Speed</span>
+                <span class="value" id="speed">0 kt</span>
+            </div>
+            <div class="hud-item">
+                <span class="label">Heading</span>
+                <span class="value" id="heading">0°</span>
+            </div>
+            <div class="hud-item">
+                <span class="label">Pitch</span>
+                <span class="value" id="pitch">0°</span>
+            </div>
+        </div>
+
+        <div class="hud-center">
+            <div id="compass-rose" class="compass">
+                <div class="compass-container">
+                    <div class="compass-ring">
+                        <div class="compass-mark north">N</div>
+                        <div class="compass-mark">E</div>
+                        <div class="compass-mark south">S</div>
+                        <div class="compass-mark">W</div>
+                    </div>
+                    <div class="compass-needle" id="compass-needle"></div>
+                </div>
+            </div>
+
+            <div class="artificial-horizon">
+                <canvas id="horizon-canvas" width="200" height="200"></canvas>
+            </div>
+        </div>
+
+        <div class="hud-bottom">
+            <div class="hud-item">
+                <span class="label">Location</span>
+                <span class="value" id="location">0.00°, 0.00°</span>
+            </div>
+            <div class="hud-item">
+                <span class="label">Throttle</span>
+                <span class="value" id="throttle">0%</span>
+            </div>
+            <div class="hud-item">
+                <span class="label">Fuel</span>
+                <span class="value" id="fuel">100%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls Info -->
+    <div id="controls-info">
+        <h3>Controls</h3>
+        <p><strong>Arrow Keys:</strong> Pitch & Roll</p>
+        <p><strong>A/D:</strong> Yaw</p>
+        <p><strong>W/S:</strong> Throttle Up/Down</p>
+        <p><strong>Space:</strong> Brake</p>
+        <p><strong>R:</strong> Reset Position</p>
+        <p><strong>V:</strong> Change View</p>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="flight-physics.js"></script>
+    <script src="scene-setup.js"></script>
+    <script src="controls.js"></script>
+    <script src="hud.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
